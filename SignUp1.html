@@ -1,0 +1,110 @@
+<!doctype html>
+<head>
+<title>Register/SignUp</title>
+<style>
+body {background-image:url("1.JPG");
+background-attachment:fixed;
+background-repeat:no-repeat;
+background-size:cover;
+color:rgb(24, 9, 9);
+}
+
+</style>
+
+<script>
+
+function fun(){
+	var reg=/^[a-zA-Z]*$/;
+	if(reg.test(document.f.firstname.value))
+		return true;
+	else{
+		document.getElementById('hi').innerHTML="must be filled with characters";
+		alert("must be characters");
+		return false;
+		}
+}
+function key(){
+	var reg=/^[a-zA-Z]*$/;
+	if(reg.test(document.f.lastname.value))
+		return true;
+	else{
+		document.getElementById('hello').innerHTML="must be filled with characters";
+		alert("must be characters");
+		return false;
+		}
+}
+
+function fn(input,mini,maxi){
+	var user=input.value;
+	if(user.length>=mini && user.length<=maxi){
+		return true;}
+	else{
+		document.getElementById('a').innerHTML="user name must be between 6 and 15";
+		alert("username has to be atleast 6 and atmost 40");
+		return false;
+	}
+}
+</script>
+<body>
+<center>
+<h1>Register/Signup</h1>
+</center>
+<form name="f" method="POST" action="reg.php" target="blank" name="second">
+	<table border="0" cellpadding='10' cellspacing='05' align='center'>
+
+<tr>
+	<td>First name:</td>
+	<td><input type="text"  name="Firstname" onblur="fun()" id="nul" required><p id="hi"></p></td>
+</tr>
+<tr>
+	<td>Last name:</td>
+	<td><input type="text" name="Lastname"  onblur="key( )" required><p id="hello"></p></td>
+</tr>
+
+<tr>
+	<td>E-mail</td>
+	<td ><input type="email" name="Email" placeholder="please enter a valid email" title="must include @"></td>
+</tr>
+<tr>
+	<td>phone No</td>
+	<td><select name="type" >
+		<option value="+91">+91</option>
+		<option value="+92">+92</option>
+		<option value="+95">+95</option>
+	</select>
+	<input type="tel" name="Mobileno" pattern="[789][0-9]{9}" title="must be 10 numbers" required></td>
+</tr>
+
+
+
+<tr>
+	<td>Address:</td>
+	<td><textarea name="Address" cols="30" rows="4"></textarea></td>
+</tr>
+
+<tr>
+	<td>Username:</td>
+	<td><input type="text" name="username" onblur="fn(document.f.username,6,40)" required><p id="a"></p></td>
+</tr>
+
+<tr>
+	<td>Password:</td>
+	<td><input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required></td>
+</tr>
+<tr>
+	<td>Confirm password:</td>
+	<td><input type="password" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required></td>
+</tr>
+<tr>
+	<td></td>
+	<td><input type="submit" value="submit" ></td>
+</tr>
+<tr>
+	<td></td>
+	<td><input type="reset" value="reset"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+ 

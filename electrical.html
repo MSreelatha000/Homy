@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://kit.fontawesome.com/d1c2ea8b80.js" crossorigin="anonymous"></script>
+        <title>Login Page</title>
+        <style>
+           body{
+               background-color: #c7dceb;
+           } 
+           .login-container{
+               background-color: white;
+               margin-right: auto;
+               margin-left: auto;
+               margin-top: 100px;
+               width: 40%;
+               padding: 15px;
+           }
+           h1{
+               font-family: Arial, Helvetica, sans-serif;
+               color: rgb(29, 28, 28);
+               font-size: 34px;
+               font-weight: 500;
+               text-align: center;
+           }
+           .form-container{
+                margin-top: 20px;
+                margin-left: 130px;
+           }
+           p{
+               font-size: 17px;
+               font-weight: 600;
+               color: black;
+               font-family: Arial, Helvetica, sans-serif;
+               padding: 0px;
+               margin-bottom: 8px;
+           }
+           input{
+               width: 350px;
+               height: 42px;
+               border-radius: 7px;
+               border-width: 0px;
+               background-color: rgb(241, 231, 231);
+           }
+           span{
+               font-weight: lighter;
+               color: rgb(92, 91, 91);
+               text-decoration: underline;
+               margin-left: 5px;
+           }
+           .signin-button{
+               width: 350px;
+               height: 42px;
+               border-radius: 7px;
+               border-width: 0px;
+               background-color: rgb(22, 22, 22);
+               color: white;
+           }
+           .bottom-para{
+               margin-top: 40px;
+               text-align: center;
+               font-weight: lighter;
+               color: rgb(92, 91, 91);
+               margin-left: 5px;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login In With</h1>
+            <div class="form-container">
+                <form method="POST" action="electrical.php">
+                    <label><p>Username</p></label>
+                    <input type="email" name="Email" placeholder="please enter a valid email" title="must include @">
+                    <label><p>Password<span> <a href="#">Forgot?</a></span></p></label>
+                    <input type="password" name="Password" pattern=".{6,}" required>
+                    <br><br>
+                    <button type="submit" class="signin-button">Login</button>
+                </form>
+            </div>
+            <p class="bottom-para">Not a member? <span><a href="SignUp1.html">Sign up now</a></span></p>
+        </div>
+    </body>
+</html>
